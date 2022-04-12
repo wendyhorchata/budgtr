@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+
+    <title>Show Budget</title>
+
+    <style>
+        body {
+            padding-top: 5%;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1><%= budget.name %></h1>
+        <button><a href="/budget">Back</a></button>
+        <table>
+            <tr>
+                <th>date</th>
+                <td><%= budget.date%></td>
+            </tr>
+            <tr>
+                <th>name</th>
+                <td><%= budget.name%></td>
+            </tr>
+            <tr>
+                <th>from</th>
+                <td><%= budget.from%></td>
+            </tr>
+            <tr>
+                <th>amount</th>
+                <td><%= budget.amount%></td>
+            </tr>
+            <tr>
+                <th>tags</th>
+                <% for (let i = 0; i < budget.tags.length; i++) { %>
+                <td><%= budget.tags[i]%></td>
+               <%}%>
+            </tr>
+
+        </table>
+
+    </div>
+
+</body>
+
+</html>

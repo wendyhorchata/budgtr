@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css" rel="stylesheet">
+    <title>Home Page</title>
+    <style>
+       
+        a {
+            text-decoration: none;
+        }
+        button#btn {
+            color: ivory;
+            background-color: gold;
+        }
+    </style>
+</head>
+
+<body>
+    <% let bankAccount = 0 %>
+    <div class="container">
+        <br>
+        <br>
+        <br>
+        <h1>Budgtr ALL</h1>
+        <button><a href="/budget/new">NEW ITEM</a></button>
+        <table>
+            <% for(let i = 0; i < allBudget.length; i++) { %>
+            <tr>
+                <td><%=allBudget[i].date %></td>
+                <td><a href="/budget/<%=i%>"><%=allBudget[i].name %></a></td>
+                <td><%=allBudget[i].amount %></td>
+                <% bankAccount = parseInt(allBudget[i].amount) + bankAccount%>
+            </tr>
+            <% } %>
+            <% if (bankAccount >= 1000) { %>
+            <button style="background-color: green;" type="submit" id="btn">Amount <%=bankAccount%></button>
+            <% } else if (bankAccount < 0) { %>
+            <button style="background-color: red;" type="submit" id="btn">Amount <%=bankAccount%></button>
+            <%} else {%>
+                <button style="background-color: goldenrod" type="submit" id="btn">Amount <%=bankAccount%></button>
+             <%}%>   
+             <% console.log(allBudget) %>
+      </table>
+    </div>
+</body>
+</html>
