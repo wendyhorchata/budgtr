@@ -1,24 +1,22 @@
 <!DOCTYPE html>
 <html lang="en">
+<head>
 
-    <%- include(`./partials/head.ejs`);%>
 
     <title>New Budget</title>
-
-    <form action="/budgets">
-      <input type="submit" value="Back to Index" />
-  </form>
-
+</head>
 <body>
 
   <h1>New Budget</h1>
+
+  <a href = "/budgets">Back</a>
   
-  <form action="/budgets/" method="POST">
+  <form action="/budget/" method="POST">
 
     Date: <input type="text" name="date" placeholder="Date" /><br />
     Name: <input type="text" name="name" placeholder="Name"/><br />
-    From: <input type="text" name="name" placeholder="From"/><br />
-    Amount: <input type="text" name="amount" placeholder="Amount"/><br />
+    From: <input type="text" name="from" placeholder="From"/><br />
+    Amount:<input type="text" name="amount" placeholder="Amount"/><br />
   
   <input type="submit" value="Create Budget">
 </form>

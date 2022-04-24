@@ -1,23 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<%- include(`./partials/head.ejs`);%>
-
 <title>Budget Show Page</title>
 
 <body>
     <div class="container">
         <h1>Retirement</h1>
 
-        <form action="/budgets">
-            <input type="submit" value="BACK" />
-        </form>
+    <a href = "/budgets">Back</a>
         
-        <p>date</p><%= budgets.date %> 
-        <p>name</p> <%= budgets.name %> 
-        <p>from</p> <%= budgets.from %> 
-        <p>amount</p> <%= budgets.amount%> 
-        <p>tags</p> <%= budgets.tags%> 
+        <p>date</p><%= budget.date %> 
+        <p>name</p> <%= budget.name %> 
+        <p>from</p> <%= budget.from %> 
+        <p>amount</p> <%= budget.amount%> 
+        <p>tags</p> <%= budget.tags%> 
     </div>
 
 </body>

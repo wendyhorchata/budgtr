@@ -1,10 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <%- include(`./partials/head.ejs`);%>
-
     <title>Budget Index Page</title>
-
 
 <body>
 
@@ -15,16 +12,13 @@
             <% for (var i = 0; i < allBudgets.length; i++) { %>
              <tr>
                <td><%= allBudgets[i].date %></td>
-               
-               <td><a href="/budgets<%=i%>"><%=allBudgets[i].name %></a></td>
+               <td><a href="/budget/<%=i%>"><%=allBudgets[i].name %></a></td>
                <td><%= allBudgets[i].amount %></td>
              </tr>    
             <% } %> 
          </table> 
     </div>
-    <form action="/budgets/new">
-        <input type="submit" value="Create New Budget" />
-    </form>
+    <a href = "/budget/new">Create New Budget</a>
 
 </body>
 </html>
